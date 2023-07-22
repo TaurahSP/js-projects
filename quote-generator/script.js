@@ -38,11 +38,11 @@ async function getQuotes(){
         const response  = await fetch(apiUrl);
         var apiQuotes = await response.json();
         rawQuotes = apiQuotes;
-        newQuote();
 
     }catch(error){
         // use local quotes in case api not working
         rawQuotes = localQuotes;
+    }finally{
         newQuote();
     }
 }
